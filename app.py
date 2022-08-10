@@ -56,18 +56,14 @@ df.columns = ['번호', '영화명', '평점', '리뷰', '작성자ID', '작성�
 
 
 
-df['평점'] = df['평점'].astype('int')
-df
+#df['평점'] = df['평점'].astype('int')
 
+#dfg = df.groupby('영화명').mean()
 
-
-dfg = df.groupby('영화명').mean()
-
-
-
-dfg.sort_values('평점').plot(kind='barh')
-plt.show()
+#dfg.sort_values('평점').plot(kind='barh')
+#plt.show()
 
 
 st.title('네이버 영화평')
 st.dataframe(df)
+st.table(df)
