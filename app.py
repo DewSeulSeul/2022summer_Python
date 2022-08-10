@@ -66,3 +66,8 @@ st.dataframe(df)
 #st.table(df)
 
 st.bar_chart(dfg, height=500)
+
+option = st.selectbox(
+    '영화를 선택하세요.',
+    df['영화명']
+)
