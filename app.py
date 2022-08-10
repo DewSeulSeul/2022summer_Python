@@ -55,15 +55,15 @@ for item in trs :
 df.columns = ['번호', '영화명', '평점', '리뷰', '작성자ID', '작성일']
 
 
+# 평점 평균으로 그래프 그리기
+df['평점'] = df['평점'].astype('int')
 
-#df['평점'] = df['평점'].astype('int')
+dfg = df.groupby('영화명').mean()
 
-#dfg = df.groupby('영화명').mean()
-
-#dfg.sort_values('평점').plot(kind='barh')
-#plt.show()
+dfg.sort_values('평점').plot(kind='barh')
+plt.show()
 
 
 st.title('네이버 영화평')
 st.dataframe(df)
-st.table(df)
+#st.table(df)
